@@ -103,7 +103,7 @@ export default function Share({ data }: ShareProps) {
   return (
     <Wrapper>
       <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
-        <Title>청첩장 공유하기</Title>
+        <Title>No sé ques</Title>
       </Divider>
       <KakaoTalkShareButton
         style={{ margin: 8 }}

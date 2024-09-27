@@ -16,7 +16,7 @@ const TitleWrapper = styled("div", {
   left: "50%",
   transform: "translate(-50%, -50%)",
   textAlign: "center",
-  textShadow: "-1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e",
+  // textShadow: "-1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e",
   animation: "fadein 3s",
   "-moz-animation": "fadein 3s" /* Firefox */,
   "-webkit-animation": "fadein 3s" /* Safari and Chrome */,
@@ -34,21 +34,19 @@ const VideoBackground = styled("video", {
 });
 
 const WeddingInvitation = styled("p", {
-  fontSize: "1.5vh",
-  opacity: 0.45,
+  fontSize: "2vh",  // Cambia el tamaño aquí
   marginBottom: 16,
+  // fontFamily: "Alex Brush", // Cambia la fuente a algo personalizado
 });
 
 const GroomBride = styled("p", {
   fontSize: "3.5vh",
-  fontWeight: "bold",
-  opacity: 0.9,
   marginBottom: 16,
+  // fontFamily: "Alex Brush", // Cambia la fuente a algo personalizado
 });
 
 const Schedule = styled("p", {
   fontSize: "2vh",
-  opacity: 0.65,
   marginBottom: 24,
 });
 
@@ -60,10 +58,10 @@ export default function Title({ data }: TitleProps) {
   return (
     <Layout>
       <VideoBackground autoPlay loop muted playsInline={true}>
-        <source src="./assets/BackgroundVideo.mp4" type="video/mp4" />
+        <source src="./assets/animation.mp4" type="video/mp4" />
       </VideoBackground>
       <TitleWrapper>
-        <WeddingInvitation>WEDDING INVITATION</WeddingInvitation>
+        <WeddingInvitation>¡Nos casamos!</WeddingInvitation>
         <GroomBride>
           {data?.groom?.name} &#38; {data?.bride?.name}
         </GroomBride>

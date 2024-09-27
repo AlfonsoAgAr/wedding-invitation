@@ -24,7 +24,7 @@ const notoSansKR = Noto_Sans_KR({
 
 const Footer = styled("footer", {
   background: "#D7CCC8",
-  backgroundImage: "url(./assets/GroovePaper.png)",
+  backgroundImage: "url(./assets/LocationMap.png)",
   opacity: 0.6,
   textAlign: "center",
   width: "100%",
@@ -44,23 +44,23 @@ export default function Home() {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta property="og:type" content="website" />
-        <meta content="○○○❤○○○ 결혼식에 초대합니다" name="Title" />
+        <meta content="Lizeth ❤ Alfonso" name="Title" />
         <meta
-          content="○○○○년 ○○월 ○○일 ○요일 오전 ○○시 ○○분"
+          content="Lizeth ❤ Alfonso"
           name="Description"
         />
-        <meta content="○○○○년 ○○월 ○○일 ○요일 오전 ○○시 ○○분" name="Keyword" />
-        <meta property="og:title" content="○○○❤○○○ 결혼식에 초대합니다" />
+        <meta content="Lizeth ❤ Alfonso" name="Keyword" />
+        <meta property="og:title" content="Lizeth ❤ Alfonso"/>
         <meta
           property="og:description"
-          content="○○○○년 ○○월 ○○일 ○요일 오전 ○○시 ○○분"
+          content="Lizeth ❤ Alfonso"
         />
         <meta
           property="og:url"
           content="https://kyuhyuk.kr/wedding-invitation"
         />
         <meta name="theme-color" content="#BCAAA4" />
-        <title>○○○❤○○○ 결혼식에 초대합니다</title>
+        <title>Lizeth ❤ Alfonso</title>
       </Head>
       <main className={`${notoSansKR.className}`}>
         <Script src="https://developers.kakao.com/sdk/js/kakao.min.js"></Script>
