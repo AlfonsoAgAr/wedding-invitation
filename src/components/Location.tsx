@@ -4,7 +4,7 @@ import { Divider, Button, Typography, Card  } from "antd";
 const { Text } = Typography;
 
 const Wrapper = styled("div", {
-  background: "$secondary",
+  background: "$background",
   width: "100%",
   paddingBottom: 42,
   textAlign: "center",
@@ -13,7 +13,7 @@ const Wrapper = styled("div", {
 const Title = styled("p", {
   fontSize: "$xl",
   color: "$textColor",
-  fontWeight: "bold",
+  // fontWeight: "bold",
   marginBottom: 0,
 });
 

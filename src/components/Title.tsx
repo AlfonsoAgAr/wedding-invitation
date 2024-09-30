@@ -1,5 +1,4 @@
 import { styled } from "@stitches/react";
-import { Divider } from "antd";
 
 const Layout = styled("div", {
   width: "100%",
@@ -12,15 +11,14 @@ const Layout = styled("div", {
 const TitleWrapper = styled("div", {
   position: "absolute",
   width: "100%",
-  top: "20%",
+  top: "35%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   textAlign: "center",
-  // textShadow: "-1px 0 #9e9e9e, 0 1px #9e9e9e, 1px 0 #9e9e9e, 0 -1px #9e9e9e",
-  animation: "fadein 3s",
-  "-moz-animation": "fadein 3s" /* Firefox */,
-  "-webkit-animation": "fadein 3s" /* Safari and Chrome */,
-  "-o-animation": "fadein 3s" /* Opera */,
+  animation: "fadein 4s",
+  "-moz-animation": "fadein 4s",
+  "-webkit-animation": "fadein 4s",
+  "-o-animation": "fadein 4s"
 });
 
 const VideoBackground = styled("video", {
@@ -33,21 +31,18 @@ const VideoBackground = styled("video", {
   minHeight: 480,
 });
 
-const WeddingInvitation = styled("p", {
-  fontSize: "2vh",  // Cambia el tamaño aquí
-  marginBottom: 16,
-  // fontFamily: "Alex Brush", // Cambia la fuente a algo personalizado
+const WeddingInvitation = styled("h1", {
+  fontSize: "$l",
 });
 
-const GroomBride = styled("p", {
-  fontSize: "3.5vh",
-  marginBottom: 16,
-  // fontFamily: "Alex Brush", // Cambia la fuente a algo personalizado
+const GroomBride = styled("h1", {
+  fontSize: "$xxl",
 });
 
 const Schedule = styled("p", {
-  fontSize: "2vh",
-  marginBottom: 24,
+  fontSize: "$s",
+  marginTop: '2%',
+  color: '$backgroundLighter'
 });
 
 type TitleProps = {
@@ -63,11 +58,11 @@ export default function Title({ data }: TitleProps) {
       <TitleWrapper>
         <WeddingInvitation>¡Nos casamos!</WeddingInvitation>
         <GroomBride>
-          {data?.groom?.name} &#38; {data?.bride?.name}
+          {data?.bride?.name} &#38; {data?.groom?.name}
         </GroomBride>
         <Schedule>
           {data?.date}
-          <br />
+          <br/>
           {data?.location}
         </Schedule>
       </TitleWrapper>

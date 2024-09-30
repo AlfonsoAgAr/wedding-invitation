@@ -1,7 +1,8 @@
 import { createStitches } from '@stitches/react';
-import { Pacifico } from 'next/font/google';
+import { Birthstone, Libre_Baskerville } from 'next/font/google';
 
-const pacificoFont = Pacifico({ subsets: ['latin'], weight: '400' })
+const birthstoneFont = Birthstone({ subsets: ['latin'], weight: '400' })
+const baskervilleFont = Libre_Baskerville({ subsets: ['latin'], weight: '400' })
 
 export const { styled, globalCss, theme } = createStitches({
   theme: {
@@ -10,17 +11,19 @@ export const { styled, globalCss, theme } = createStitches({
       secondary: '#FADADD',
       background: '#FFFFF0',
       backgroundLighter : '#FDFDFD',
-      footerBg: '#D7CCC8',
+      footer: '#D7CCC8',
       textColor: '#000000'
     },
     fonts: {
-        body: `${pacificoFont.style.fontFamily}, sans-serif`  // Fuente principal
+        body: `${baskervilleFont.style.fontFamily}, sans-serif`,
+        title: `${birthstoneFont.style.fontFamily}, sans-serif`
     },
     fontSizes: {
-      sm: '12px',
-      md: '16px',
-      lg: '20px',
-      xl: '24px',
+      s: '2vh',
+      m: '3vh',
+      l: '5vh',
+      xl: '7vh',
+      xxl: '9vh'
     },
   },
 });
@@ -37,9 +40,13 @@ export const globalStyles = globalCss({
       backgroundColor: '$background',
       color: '$secondary',
     },
+    principal: {
+      fontFamily: '$title',
+      color: '$FDFDFD',
+    },
     h1: {
-      fontFamily: '$heading',
-      color: '$primary',
+      fontFamily: '$title',
+      color: '$backgroundLighter',
     },
     p: {
       fontFamily: '$body',

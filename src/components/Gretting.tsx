@@ -2,15 +2,15 @@ import { styled } from "@stitches/react";
 import { Divider } from "antd";
 
 const Wrapper = styled("div", {
-  background: "#efebe9",
+  background: "#background",
   backgroundImage: "url(./assets/GroovePaper.png)",
   width: "100%",
 });
 
-const Title = styled("p", {
-  fontSize: "2vh",
-  fontWeight: "bold",
-  opacity: 0.85,
+const Title = styled("h1", {
+  fontSize: "$l",
+  // fontWeight: "bold",
+  color: "$textColor",
   marginBottom: 0,
 });
 
