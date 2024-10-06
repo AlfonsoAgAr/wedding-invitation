@@ -1,18 +1,18 @@
 {
-  "date": "21 de Diciembre 2024",
+  "date": "21 de Diciembre 2024 1 P.M.",
   "formatedDate": "2024-12-21",
   "location": "Tlayacapan, Morelos",
-  "gretting": "Gracias por acompañarnos",
+  "gretting": "A nuestros amados padres, gracias por darnos la vida, por criarnos con tanto amor y por apoyarnos siempre en cada decisión. Su amor incondicional ha sido nuestra guía en este camino. Hoy, al unir nuestras vidas, queremos honrarlos a ustedes, quienes nos enseñaron el verdadero significado del amor y la familia. Gracias por estar aquí para celebrar con nosotros este día tan especial.",
   "groom": {
     "name": "Alfonso",
     "account_number": "11111111",
     "parents": {
       "mother": {
-        "name": "nosequees x2",
+        "name": "Nelly Argueta",
         "account_number": "222222"
       },
       "father": {
-        "name": "nosequees x3",
+        "name": "Mario Aguilar",
         "account_number": "333333"
       }
     }
@@ -22,11 +22,11 @@
     "account_number": "444444",
     "parents": {
       "mother": {
-        "name": "nosequees x5",
+        "name": "Rosaura Martínez",
         "account_number": "5555555"
       },
       "father": {
-        "name": "nosequees x6",
+        "name": "Heriberto Guzmán",
         "account_number": "66666"
       }
     }

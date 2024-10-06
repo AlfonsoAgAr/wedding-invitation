@@ -48,7 +48,7 @@ const Schedule = styled("p", {
 
 const CountdownText = styled("p", {
   fontSize: "$s",
-  marginTop: "100px",
+  marginTop: "25%",
   color: "$backgroundLighter",
   // fontWeight: "bold",
 });
@@ -60,7 +60,19 @@ type TitleProps = {
 
 export default function Title({ data }: TitleProps) {
   const targetDate = new Date(data?.formatedDate ?? "2024-12-21");
-  const { days, hours, minutes, seconds } = useCountdown(targetDate);
+  const days = useCountdown(targetDate);
+  
+  const today = new Date()
+
+  const isToday = (date1: Date, date2: Date) => {
+    return (
+      date1.getFullYear() === date2.getFullYear() &&
+      date1.getMonth() === date2.getMonth() &&
+      date1.getDate() === date2.getDate()
+    );
+  };
+
+  const weddingIsToday = isToday(today, targetDate);
   
   return (
     <Layout>
@@ -77,9 +89,16 @@ export default function Title({ data }: TitleProps) {
           <br/>
           {data?.location}
         </Schedule>
-        <CountdownText>
-          Faltan {days} días, {hours} horas, {minutes} minutos, {seconds} segundos para el gran día 🎉
-        </CountdownText>
+        {weddingIsToday ? (
+          <CountdownText>🎉🎉🎉🎉 ¡ES HOY! 🎉🎉🎉🎉</CountdownText>
+        ) : (
+            days == 1 ? (
+              <CountdownText>Falta {days} día</CountdownText>  
+            ) : (
+              <CountdownText>Faltan {days} días</CountdownText>
+            )
+          )
+        }
       </TitleWrapper>
     </Layout>
   );

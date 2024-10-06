@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 import { styled } from "@stitches/react";
 import JsonData from "@/data.json";
 import Script from "next/script";
+import Attractions from "@/components/Attractions";
 
 const Title = dynamic(() => import("@/components/Title"), { ssr: false });
 const Gretting = dynamic(() => import("@/components/Gretting"), { ssr: false });
@@ -37,6 +38,20 @@ const Footer = styled("footer", {
   "-webkit-box-pack": "center",
 });
 
+const attractionsData = [
+  {
+    title: "Convento de San Juan Bautista",
+    description: "Este convento del siglo XVI es Patrimonio de la Humanidad y uno de los puntos más icónicos del pueblo.",
+    image: "/assets/convento.jpg",
+  },
+  {
+    title: "Museo Casa de Cultura",
+    description: "Un espacio que resguarda la historia y tradiciones del pueblo, además de arte local.",
+    image: "/assets/casa_cultura.jpg",
+  }
+];
+
+
 export default function Home() {
   return (
     <>
@@ -65,11 +80,12 @@ export default function Home() {
       <main className={`${notoSansKR.className}`}>
         <Script src="https://developers.kakao.com/sdk/js/kakao.min.js"></Script>
         <Title data={JsonData} />
-        <Gretting data={JsonData} />
+        {/* <Gretting data={JsonData} /> */}
         <Gallery />
         <Location />
-        <CongratulatoryMoney data={JsonData} />
-        <Share data={JsonData} />
+        <Attractions attractions={attractionsData} />
+        {/* <CongratulatoryMoney data={JsonData} /> */}
+        {/* <Share data={JsonData} /> */}
         <Footer>Copyright © 2021 KyuHyuk Lee</Footer>
       </main>
     </>
