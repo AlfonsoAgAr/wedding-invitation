@@ -1,5 +1,6 @@
 type Data = {
   date: string;
+  formatedDate: string;
   location: string;
   gretting: string;
   groom: {

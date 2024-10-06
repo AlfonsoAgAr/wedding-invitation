@@ -1,4 +1,5 @@
 import { styled } from "@stitches/react";
+import { useCountdown } from "./Counter";
 
 const Layout = styled("div", {
   width: "100%",
@@ -45,11 +46,22 @@ const Schedule = styled("p", {
   color: '$backgroundLighter'
 });
 
+const CountdownText = styled("p", {
+  fontSize: "$s",
+  marginTop: "100px",
+  color: "$backgroundLighter",
+  // fontWeight: "bold",
+});
+
+
 type TitleProps = {
   data?: Data;
 };
 
 export default function Title({ data }: TitleProps) {
+  const targetDate = new Date(data?.formatedDate ?? "2024-12-21");
+  const { days, hours, minutes, seconds } = useCountdown(targetDate);
+  
   return (
     <Layout>
       <VideoBackground autoPlay loop muted playsInline={true}>
@@ -65,6 +77,9 @@ export default function Title({ data }: TitleProps) {
           <br/>
           {data?.location}
         </Schedule>
+        <CountdownText>
+          Faltan {days} días, {hours} horas, {minutes} minutos, {seconds} segundos para el gran día 🎉
+        </CountdownText>
       </TitleWrapper>
     </Layout>
   );
