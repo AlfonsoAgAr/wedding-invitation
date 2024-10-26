@@ -1,5 +1,7 @@
 import { styled } from "@/styles/theme";
-import { Card, Divider } from "antd";
+import { Divider, Carousel, Typography, Card as AntCard } from "antd";
+
+const { Text } = Typography;
 
 const Wrapper = styled("div", {
   background: "$background",
@@ -8,18 +10,24 @@ const Wrapper = styled("div", {
   textAlign: "center",
 });
 
-const Title = styled("h2", {
+const Title = styled("p", {
   fontSize: "$xl",
-  color: "$primary",
+  color: "$textColor",
   fontFamily: "$title",
-  marginBottom: "30px",
+  textAlign: "center"
 });
 
-const AttractionCard = styled(Card, {
+
+const StyledCard = styled(AntCard, {
   width: "85%",
   margin: "20px auto",
-  textAlign: "left",
+  backgroundColor: "$backgroundLighter",
+  textAlign: "center",
   fontFamily: "$body",
+});
+
+const StyledCardTitle = styled("p", {
+  fontWeight: "lighter",
 });
 
 const AttractionContent = styled("div", {
@@ -33,6 +41,7 @@ const AttractionImage = styled("img", {
   height: "200px",
   objectFit: "cover",
   marginBottom: "15px",
+  borderRadius: "10px",
 });
 
 type AttractionProps = {
@@ -46,14 +55,18 @@ type AttractionProps = {
 export default function Attractions({ attractions }: AttractionProps) {
   return (
     <Wrapper>
-      <Divider plain />
-      <Title>Atracciones de Tlayacapan</Title>
-      {attractions.map((attraction, index) => (
-        <AttractionCard key={index} title={attraction.title}>
-          <AttractionImage src={attraction.image} alt={attraction.title} />
-          <AttractionContent>{attraction.description}</AttractionContent>
-        </AttractionCard>
-      ))}
+      <Divider plain style={{ marginTop: 0, marginBottom: 32 }}>
+        <Title>Atracciones</Title>
+        <Title>Cercanas</Title>
+      </Divider>
+      <Carousel autoplay autoplaySpeed={7500} dots={{ className: "carousel-dots" }} style={{ width: "90%", margin: "0 auto" }}>
+        {attractions.map((attraction, index) => (
+          <StyledCard key={index} title={<StyledCardTitle>{attraction.title}</StyledCardTitle>}>
+            <AttractionImage src={attraction.image} alt={attraction.title} />
+            <AttractionContent>{attraction.description}</AttractionContent>
+          </StyledCard>
+        ))}
+      </Carousel>
     </Wrapper>
   );
 }

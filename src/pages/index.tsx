@@ -1,32 +1,19 @@
 import Head from "next/head";
-import { useEffect, useState } from "react";
-import { Noto_Sans_KR } from "next/font/google";
 import dynamic from "next/dynamic";
 import { styled } from "@stitches/react";
 import JsonData from "@/data.json";
-import Script from "next/script";
-import Attractions from "@/components/Attractions";
 
+const Attractions =  dynamic(() => import("@/components/Attractions"), { ssr: false });
 const Title = dynamic(() => import("@/components/Title"), { ssr: false });
-const Gretting = dynamic(() => import("@/components/Gretting"), { ssr: false });
+const WeddingSchedule  = dynamic(() => import("@/components/WeddingScheduling"), { ssr: false });
 const Gallery = dynamic(() => import("@/components/Gallery"), { ssr: false });
 const Location = dynamic(() => import("@/components/Location"), { ssr: false });
-const CongratulatoryMoney = dynamic(
-  () => import("@/components/CongratulatoryMoney"),
-  { ssr: false }
-);
-const Share = dynamic(() => import("@/components/Share"), { ssr: false });
-
-const notoSansKR = Noto_Sans_KR({
-  weight: ["400", "700"],
-  subsets: [],
-  style: "normal",
-});
+const Calendar = dynamic(() => import("@/components/AddToCalendar"), { ssr: false });
 
 const Footer = styled("footer", {
-  background: "#D7CCC8",
-  backgroundImage: "url(./assets/LocationMap.png)",
-  opacity: 0.6,
+  color: "$background",
+  backgroundImage: "url(./assets/wedding.webp)",
+  opacity: 0.8,
   textAlign: "center",
   width: "100%",
   height: "100px",
@@ -42,15 +29,28 @@ const attractionsData = [
   {
     title: "Convento de San Juan Bautista",
     description: "Este convento del siglo XVI es Patrimonio de la Humanidad y uno de los puntos más icónicos del pueblo.",
-    image: "/assets/convento.jpg",
+    image: "/assets/san_juan_bautista.jpg",
   },
   {
     title: "Museo Casa de Cultura",
     description: "Un espacio que resguarda la historia y tradiciones del pueblo, además de arte local.",
-    image: "/assets/casa_cultura.jpg",
+    image: "/assets/cereria.webp",
+  },
+  {
+    title: "Six Flags Hurricane Harbor",
+    description: "Uno de los parques acuáticos más grandes de México.",
+    image: "/assets/six_flags.jpg",
   }
 ];
 
+const events = [
+  { time: "14:00", description: "Ceremonia en la iglesia" },
+  { time: "15:30", description: "Cocteles y aperitivos" },
+  { time: "17:00", description: "Banquete en el salón" },
+  { time: "19:00", description: "Primer baile y apertura de pista" },
+  { time: "20:30", description: "Corte de pastel" },
+  { time: "22:00", description: "Baile y celebración" },
+];
 
 export default function Home() {
   return (
@@ -77,16 +77,14 @@ export default function Home() {
         <meta name="theme-color" content="#BCAAA4" />
         <title>Lizeth ❤ Alfonso</title>
       </Head>
-      <main className={`${notoSansKR.className}`}>
-        <Script src="https://developers.kakao.com/sdk/js/kakao.min.js"></Script>
+      <main>
         <Title data={JsonData} />
-        {/* <Gretting data={JsonData} /> */}
         <Gallery />
         <Location />
+        <WeddingSchedule events={events} />
+        <Calendar />
         <Attractions attractions={attractionsData} />
-        {/* <CongratulatoryMoney data={JsonData} /> */}
-        {/* <Share data={JsonData} /> */}
-        <Footer>Copyright © 2021 KyuHyuk Lee</Footer>
+        <Footer>Copyright © 2024 Alfonso Aguilar</Footer>
       </main>
     </>
   );
