@@ -9,6 +9,7 @@ const WeddingSchedule  = dynamic(() => import("@/components/WeddingScheduling"),
 const Gallery = dynamic(() => import("@/components/Gallery"), { ssr: false });
 const Location = dynamic(() => import("@/components/Location"), { ssr: false });
 const Calendar = dynamic(() => import("@/components/AddToCalendar"), { ssr: false });
+const BackgroundMusic = dynamic(() => import("@/components/BackgroundMusic"), { ssr: false });
 
 const Footer = styled("footer", {
   color: "$background",
@@ -44,12 +45,13 @@ const attractionsData = [
 ];
 
 const events = [
-  { time: "14:00", description: "Ceremonia en la iglesia" },
-  { time: "15:30", description: "Cocteles y aperitivos" },
-  { time: "17:00", description: "Banquete en el salón" },
-  { time: "19:00", description: "Primer baile y apertura de pista" },
-  { time: "20:30", description: "Corte de pastel" },
-  { time: "22:00", description: "Baile y celebración" },
+  { time: "12:30", description: "Cóctel de bienvenida 🍸" },
+  { time: "13:00", description: "Ceremonia civil 👰" },
+  { time: "14:00", description: "Fotos con los novios 📷" },
+  { time: "15:00", description: "Comida 🌮" },
+  { time: "16:00", description: "Apertura de pista 🥳" },
+  { time: "18:00", description: "Pastel  🍰 " },
+  { time: "21:00", description: "Baile 🥁" },
 ];
 
 export default function Home() {
@@ -78,6 +80,7 @@ export default function Home() {
         <title>Lizeth ❤ Alfonso</title>
       </Head>
       <main>
+        <BackgroundMusic />
         <Title data={JsonData} />
         <Gallery />
         <Location />
