@@ -34,8 +34,16 @@ const images = [
   {
     original: "./assets/2.jpeg",
     thumbnail: "./assets/2.jpeg",
+  },
+  {
+    original: "./assets/3.jpeg",
+    thumbnail: "./assets/3.jpeg",
+  },
+  {
+    original: "./assets/4.jpeg",
+    thumbnail: "./assets/4.jpeg",
   }
-];
+  ];
 
 const messageOurs = "Nos conocimos casi por casualidad, como si el destino hubiera decidido cruzar nuestros caminos en el momento justo. Con el tiempo, nuestras risas se hicieron más profundas, nuestras conversaciones más largas, y nuestros corazones, más unidos. Hoy, damos un nuevo paso en esta aventura, emocionados por todo lo que aún está por venir. Y lo más importante: lo hacemos juntos, con la certeza de que, pase lo que pase, siempre nos tendremos el uno al otro."
 

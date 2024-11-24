@@ -49,29 +49,15 @@ const Description = styled("p", {
   
 
 const StyledButton = styled(Button, {
-    marginTop: 36,
     backgroundColor: "$secondary",
     color: "$textColor",
+    height: "45px",
     fontFamily: "$body",
     borderRadius: "10px",
     fontSize: "$s",
     "&:hover": {
         backgroundColor: "$secondary",
     },
-//   fontSize: "1.2rem",
-//   padding: "12px 24px",
-//   backgroundColor: "$primary",
-//   color: "#fff",
-//   fontFamily: "$title",
-//   borderRadius: "8px",
-//   display: "inline-flex",
-//   alignItems: "center",
-//   justifyContent: "center",
-//   transition: "all 0.3s ease",
-//   "&:hover": {
-//     backgroundColor: "$secondary",
-//     color: "$textColor",
-//   },
 });
 
 export default function AddToCalendar() {
@@ -82,7 +68,7 @@ export default function AddToCalendar() {
             <Title>nosotros</Title>
         </Divider>
         <Description>
-        Da click o escanea el código QR para compartir tus fotos con nosotros y agrega el evento a tu calendario.
+        Da click o escanea el código QR para compartir tus fotos con nosotros
       </Description>
 
       <QRCard>
@@ -98,14 +84,18 @@ export default function AddToCalendar() {
         </a>
         </QRWrapper>
       </QRCard>
-
+      <Description>
+        Da click en el siguiente botón para agregar el evento a tu calendario.
+      </Description>
       <StyledButton
         href="https://calendar.app.google/SGaEkZGYs1QGp3bt9"
         target="_blank"
         rel="noopener noreferrer"
         icon={<CalendarOutlined style={{
             fontSize: "1.1rem",
-            marginRight: "6px"
+            marginRight: "10px",
+            backgroundColor: "$secondary",
+            
         }} />}
       >
         ¡Agrega el evento a tu calendario!

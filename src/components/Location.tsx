@@ -40,6 +40,8 @@ const StyledButton = styled(AntButton, {
   marginTop: 36,
   backgroundColor: "$secondary",
   color: "$textColor",
+  fontSize: "1.1rem",
+  height: "45px",
   fontFamily: "$body",
   "&:hover": {
     backgroundColor: "$secondary",
@@ -82,7 +84,7 @@ export default function Location() {
         href={googleMapsLink}
         target="_blank"
       >
-        Abrir en aplicación
+        Abrir en aplicación 📍
       </StyledButton>
     </Wrapper>
   );

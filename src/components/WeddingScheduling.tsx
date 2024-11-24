@@ -43,15 +43,6 @@ const EventDescription = styled(Text, {
   color: "$textColor",
 });
 
-const ToggleButton = styled(Button, {
-  backgroundColor: "$secondary",
-  color: "$textColor",
-  marginBottom: "20px",
-  "&:hover": {
-    backgroundColor: "$primary",
-    color: "#fff",
-  },
-});
 
 type Event = {
   time: string;
@@ -68,6 +59,17 @@ export default function WeddingSchedule({ events }: WeddingScheduleProps) {
   const toggleSchedule = () => {
     setIsExpanded(!isExpanded);
   };
+  const ToggleButton = styled(Button, {
+    backgroundColor: "$secondary",
+    color: "$textColor",
+    fontSize: "1.1rem",
+    height: "45px",
+    marginBottom: "20px",
+    "&:hover": {
+      backgroundColor: "$primary",
+      color: "#fff",
+    },
+  });
 
   return (
     <Wrapper>
