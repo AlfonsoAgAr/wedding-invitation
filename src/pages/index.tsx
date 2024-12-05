@@ -45,12 +45,11 @@ const attractionsData = [
 ];
 
 const events = [
-  { time: "12:30", description: "Cóctel de bienvenida 🍸" },
+  { time: "12:30", description: "Recepción de invitados 🥂" },
   { time: "13:00", description: "Ceremonia civil 👰" },
-  { time: "14:00", description: "Fotos con los novios 📷" },
-  { time: "15:00", description: "Comida 🌮" },
+  { time: "14:30", description: "Comida 🌮" },
   { time: "16:00", description: "Apertura de pista 🥳" },
-  { time: "18:00", description: "Pastel  🍰 " },
+  { time: "17:30", description: "Pastel  🍰 " },
   { time: "21:00", description: "Baile 🥁" },
 ];
 

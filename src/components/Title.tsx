@@ -12,14 +12,21 @@ const Layout = styled("div", {
 const TitleWrapper = styled("div", {
   position: "absolute",
   width: "100%",
-  top: "35%",
+  top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   textAlign: "center",
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
   animation: "fadein 4s",
   "-moz-animation": "fadein 4s",
   "-webkit-animation": "fadein 4s",
-  "-o-animation": "fadein 4s"
+  "-o-animation": "fadein 4s",
+  "@media (max-width: 768px)": {
+    top: "35%"
+  }
 });
 
 const VideoBackground = styled("video", {
