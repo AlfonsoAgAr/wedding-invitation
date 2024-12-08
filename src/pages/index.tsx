@@ -81,7 +81,6 @@ export default function Home() {
       <main>
         <BackgroundMusic />
         <Title data={JsonData} />
-        <Gallery />
         <Location />
         <WeddingSchedule events={events} />
         <Calendar />
