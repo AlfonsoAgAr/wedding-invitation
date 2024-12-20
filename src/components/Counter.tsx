@@ -4,7 +4,7 @@ function calculateCountdown(targetDate: Date) {
   const targetDateTime = new Date(targetDate);
   const now = new Date();
   const difference = targetDateTime.valueOf() - now.valueOf();
-  const days = Math.floor(difference / (1000 * 60 * 60 * 24)) + 1;
+  const days = Math.floor(difference / (1000 * 60 * 60 * 24)) + 2;
 
 
   return days;
